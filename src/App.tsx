@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { NewTrabsactionModal } from './components/NewTrabsactionModal';
 
 import { GlobalStyle } from "./styles/global";
+import { TransactionsProvaider } from './TransactionsContext';
 
 Modal.setAppElement('#root')
 
@@ -20,18 +21,18 @@ export function App() {
   }
 
   return (
-    <>
-     <Header onOpenNewTrasactionModal={handleOpenNewTrasactionModal}/>
+    <TransactionsProvaider>
+      <Header onOpenNewTrasactionModal={handleOpenNewTrasactionModal}/>
 
-     <Dashboard />
+      <Dashboard />
 
-      <NewTrabsactionModal 
-        isOpen={isNewTrasactionModalOpen} 
-        onRequestClose={handleCloseNewTrasactionModal}
-      />
+        <NewTrabsactionModal 
+          isOpen={isNewTrasactionModalOpen} 
+          onRequestClose={handleCloseNewTrasactionModal}
+        />
 
-     <GlobalStyle />
-    </>
+      <GlobalStyle />
+    </TransactionsProvaider>
   );
 }
 
