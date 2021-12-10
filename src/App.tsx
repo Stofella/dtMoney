@@ -5,7 +5,7 @@ import { Header } from "./components/Header";
 import { NewTrabsactionModal } from './components/NewTrabsactionModal';
 
 import { GlobalStyle } from "./styles/global";
-import { TransactionsProvaider } from './TransactionsContext';
+import { TransactionsProvaider } from '../src/hooks/useTransactions';
 
 Modal.setAppElement('#root')
 
